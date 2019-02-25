@@ -11,12 +11,12 @@ def killTutorProc():
             proc.kill()
 killTutorProc()
 
-nt = "./nt.sh" #No tutor. Run generic tutoring center message.
-kr = "./kr.sh"
-jc = "./jc.sh"
-fh = "./fh.sh"
-mb = "./mb.sh"
-rn = "./rn.sh"
+nt = "./Shell/nt.sh" #No tutor. Run generic tutoring center message.
+kr = "./Shell/kr.sh"
+jc = "./Shell/jc.sh"
+fh = "./Shell/fh.sh"
+mb = "./Shell/mb.sh"
+rn = "./Shell/rn.sh"
 now = datetime.datetime.now()
 
 # Figure out the weekday.
@@ -25,10 +25,10 @@ day = day - 1 # Arrays start at index 0!
 
 # Figure out whose shift it is.
 # MAKRE SURE TO HANDLE 0/30!
-# EX: (9 % 9) + (1/30) = 0.3 -> 0
-#     (9 % 9) + (31/30) = 1.03 -> 1
+# EX: (9 % 9)*2 + (1/30) = 0.3 -> 0
+#     (9 % 9)*2 + (31/30) = 1.03 -> 1
 hour = now.hour
-hour = hour % 9
+hour = (hour % 9) * 2
 minute = now.minute
 if minute == 0:
 	minute += 1
@@ -43,8 +43,6 @@ tutors = np.array([
     [kr, kr, nt, nt, jc, jc, jc, jc, fh, fh, fh, rn, rn, rn, nt, nt, nt, rn],
     [kr, kr, mb, mb, mb, mb, mb, mb, nt, nt, nt, nt, nt, jc, jc, jc, nt, nt],
     [fh, fh, fh, fh, nt, nt, nt, nt, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
-    [fh, fh, fh, fh, nt, nt, nt, nt, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
-    [fh, fh, fh, fh, nt, nt, nt, nt, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn, jc, mb, kr, kr]
 ])
 
 # Display tutor's 'powerpoint'.
