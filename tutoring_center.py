@@ -53,28 +53,3 @@ while(True):
 		time.sleep(5)
 		process = subprocess.Popen(tutor, shell=True)
 
-''' For posterity.
-# Display tutor's 'powerpoint'.
-temp = 0
-while(True):
-	tutor = tutors[day][shift]
-#tutor = tutors[0][13]
-	if(temp != shift):
-		killTutorProc()
-		process = subprocess.Popen(tutor, shell=True)
-		print day, shift, tutor
-		temp = shift
-	day = now.isoweekday()
-	day = day-1# Arrays start at index 0!
-	
-	hour = now.hour
-	hour = (hour % 9) * 2
-	minute = now.minute
-	if minute == 0:
-		minute += 1
-	minute = minute / 30
-	shift = hour + minute
-	shift = int(shift)
-
-print tutor
-'''
