@@ -22,7 +22,7 @@ tutors = np.array([
     [fh, fh, jc, jc, jc, jc, jc, jc, jc, jc, jc, jc, mb, mb, mb, mb, mb, mb],
     [kr, kr, nt, nt, jc, jc, jc, jc, fh, fh, fh, rn, rn, rn, nt, nt, nt, rn],
     [kr, kr, mb, mb, mb, mb, mb, mb, nt, nt, nt, nt, nt, jc, jc, jc, nt, nt],
-    [fh, fh, fh, fh, nt, nt, nt, nt, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
+    [fh, fh, fh, fh, nt, kr, kr, nt, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
 ])
 
 while(True):
@@ -44,12 +44,13 @@ while(True):
 	shift = hour + minute
 	shift = int(shift)
 
-	#print day, shift, tutor
+	#print "Day: ", day, "Shift: ", shift
 	#Display tutor's powerpoint.
-	tutor = tutors[day][shift]
-	if (now.minute == 0 and now.second == 1 or now.minute == 30 and now.second == 1):
-		#print day, shift, tutor
-		killTutorProc()
-		time.sleep(5)
-		process = subprocess.Popen(tutor, shell=True)
-
+	if (now.hour >= 9 and now.hour < 18):
+		tutor = tutors[day][shift]
+	#print "Hour: ", now.hour
+		if (now.minute == 0 and now.second == 1 or now.minute == 30 and now.second == 1):
+			#print day, shift, tutor
+			killTutorProc()
+			time.sleep(5)
+			process = subprocess.Popen(tutor, shell=True)
