@@ -1,9 +1,10 @@
 Tutoring Center Project.
 
 Contributors:
-# Manvir Bal
+
 # Fernando Herrera
 # Anna Poon
+# Manvir Bal
 
 In order to set up your crontab, simple input this in the command line:
 crontab -e
