@@ -16,6 +16,7 @@ jc = "./Shell/jc.sh"
 fh = "./Shell/fh.sh"
 mb = "./Shell/mb.sh"
 rn = "./Shell/rn.sh"
+re = "./Shell/re.sh"
 # 5 rows x 18 columns
 tutors = np.array([
     [kr, kr, nt, nt, jc, jc, jc, jc, fh, fh, fh, rn, rn, rn, nt, nt, nt, rn],
@@ -44,13 +45,12 @@ while(True):
 	shift = hour + minute
 	shift = int(shift)
 
-	#print "Day: ", day, "Shift: ", shift
 	#Display tutor's powerpoint.
-	if (now.hour >= 9 and now.hour < 18):
+        #       Within working hours                Within working days
+	if ((now.hour >= 9 and now.hour < 18) and (day >= 0 and day < 5)):
 		tutor = tutors[day][shift]
-	#print "Hour: ", now.hour
+                # Display powerpoint every 30 minutes.
 		if (now.minute == 0 and now.second == 1 or now.minute == 30 and now.second == 1):
-			#print day, shift, tutor
 			killTutorProc()
 			time.sleep(5)
 			process = subprocess.Popen(tutor, shell=True)
