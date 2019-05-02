@@ -19,11 +19,11 @@ rn = "./Shell/rn.sh"
 re = "./Shell/re.sh"
 # 5 rows x 18 columns
 tutors = np.array([
-    [kr, kr, nt, nt, jc, jc, jc, jc, fh, fh, fh, rn, rn, rn, nt, nt, nt, rn],
-    [fh, fh, jc, jc, jc, jc, jc, jc, jc, jc, jc, jc, mb, mb, mb, mb, mb, mb],
-    [kr, kr, nt, nt, jc, jc, jc, jc, fh, fh, fh, rn, rn, rn, nt, nt, nt, rn],
-    [kr, kr, mb, mb, mb, mb, mb, mb, nt, nt, nt, nt, nt, jc, jc, jc, nt, nt],
-    [fh, fh, fh, fh, nt, kr, kr, nt, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
+    [kr, kr, re, re, re, jc, jc, jc, fh, fh, fh, rn, rn, rn, re, re, nt, rn],
+    [fh, fh, jc, jc, jc, jc, re, re, re, re, re, re, mb, mb, mb, mb, mb, mb],
+    [kr, kr, re, re, re, jc, jc, jc, fh, fh, fh, rn, rn, rn, re, re, nt, rn],
+    [nt, nt, mb, mb, mb, mb, mb, mb, rn, rn, rn, rn, nt, jc, jc, jc, nt, nt],
+    [fh, fh, fh, fh, re, re, re, re, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
 ])
 
 while(True):
