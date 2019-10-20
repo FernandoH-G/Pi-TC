@@ -10,20 +10,31 @@ def killTutorProc():
         if proc.name() == 'soffice.bin':
             proc.kill()
 
+#kr = "./Shell/kr.sh"
+#rn = "./Shell/rn.sh"
 nt = "./Shell/nt.sh" #No tutor. Run generic tutoring center message.
-kr = "./Shell/kr.sh"
+ap = "./Shell/ap.sh"
 jc = "./Shell/jc.sh"
 fh = "./Shell/fh.sh"
 mb = "./Shell/mb.sh"
-rn = "./Shell/rn.sh"
-re = "./Shell/re.sh"
+rr = "./Shell/rr.sh"
+# Double covers
+jm = "./Shell/jm.sh"
+fa = "./Shell/fa.sh"
+rf = "./Shell/fa.sh"
+fj = "./Shell/fj.sh"
+ma = "./Shell/ma.sh"
+ra = "./Shell/ra.sh"
+rb = "./Shell/rb.sh"
+
 # 5 rows x 18 columns
 tutors = np.array([
-    [kr, kr, re, re, re, jc, jc, jc, fh, fh, fh, rn, rn, rn, re, re, nt, rn],
-    [fh, fh, jc, jc, jc, jc, re, re, re, re, re, re, mb, mb, mb, mb, mb, mb],
-    [kr, kr, re, re, re, jc, jc, jc, fh, fh, fh, rn, rn, rn, re, re, nt, rn],
-    [nt, nt, mb, mb, mb, mb, mb, mb, rn, rn, rn, rn, nt, jc, jc, jc, nt, nt],
-    [fh, fh, fh, fh, re, re, re, re, nt, fh, fh, fh, fh, rn, rn, rn, rn, rn],
+#   9am                      12pm                                    5pm
+    [jc, jc, jc, jc, jm, jm, ap, ap, fa, fa, fa, fa, rf, rf, rr, rr, rr, rr],
+    [jc, jc, jc, jc, jc, jc, jc, jc, mb, mb, mb, mb, mb, mb, mb, mb, mb, mb],
+    [fh, fh, fj, fj, fj, fj, ap, ap, ma, ma, ma, ma, ra, ra, ra, ra, ra, ra],
+    [ap, ap, ap, ap, ap, ap, ap, fh, fh, fh, fh, jc, jc, jc, rr, rr, rr, rr],
+    [rr, rr, rr, rr, rb, rb, rr, nt, mb, mb, mb, mb, mb, mb, mb, mb, nt, nt],
 ])
 
 while(True):
