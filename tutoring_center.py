@@ -21,7 +21,7 @@ rr = "./Shell/rr.sh"
 # Double covers
 jm = "./Shell/jm.sh"
 fa = "./Shell/fa.sh"
-rf = "./Shell/fa.sh"
+rf = "./Shell/rf.sh"
 fj = "./Shell/fj.sh"
 ma = "./Shell/ma.sh"
 ra = "./Shell/ra.sh"
