@@ -36,7 +36,7 @@ tutors = np.array([
     [ap, ap, ap, ap, ap, ap, ap, fh, fh, fh, fh, jc, jc, jc, rr, rr, rr, rr],
     [rr, rr, rr, rr, rb, rb, rr, nt, mb, mb, mb, mb, mb, mb, mb, mb, nt, nt],
 ])
-
+notset = True
 while(True):
 	# Figure out the weekday.
 	now = datetime.datetime.now()
@@ -61,7 +61,8 @@ while(True):
 	if ((now.hour >= 9 and now.hour < 18) and (day >= 0 and day < 5)):
 		tutor = tutors[day][shift]
                 # Display powerpoint every 30 minutes.
-		if (now.minute == 0 and now.second == 1 or now.minute == 30 and now.second == 1):
+		if (now.minute == 0 and now.second == 1 or now.minute == 30 and now.second == 1 or notset):
 			killTutorProc()
 			time.sleep(5)
 			process = subprocess.Popen(tutor, shell=True)
+			notset = False
